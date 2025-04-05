@@ -17,10 +17,9 @@ jobs:
       
     - name: Run daily task
       run: |
-        echo "开始执行每日任务"
         # 在这里添加你要执行的命令
         # 例如: python main.py
-        echo "任务执行完成"
+        python setup.py
         
     - name: Complete
       run: echo "每日任务已完成 $(date)"
