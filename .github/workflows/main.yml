@@ -1,0 +1,26 @@
+name: Daily Auto Run
+
+on:
+  schedule:
+    # 每天UTC时间0:00（北京时间8:00）运行
+    - cron: '0 0 * * *'
+  # 允许手动触发工作流
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Run daily task
+      run: |
+        echo "开始执行每日任务"
+        # 在这里添加你要执行的命令
+        # 例如: python main.py
+        echo "任务执行完成"
+        
+    - name: Complete
+      run: echo "每日任务已完成 $(date)"
