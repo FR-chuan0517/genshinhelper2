@@ -1,7 +1,8 @@
 name: Daily Setup Run
 on:
   schedule:
-    - cron: '0 0 * * *'
+    # 每天 UTC 时间 20:00 对应北京时间 4:00
+    - cron: '0 20 * * *'
   workflow_dispatch:
 jobs:
   run-setup:
